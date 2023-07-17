@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>21880159 - Web1 Project</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!--favicon-->
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <!--Font Awesome-->
+    <script src="https://kit.fontawesome.com/3005af10ae.js" crossorigin="anonymous"></script>
+    <!--Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Changa+One&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <header class="container">
+        <nav class="navbar navbar-expand-sm navbar-light">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <img src="images/logo.png" alt="">
+                </a>
+                <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#menu-header" aria-controls="menu-header" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="menu-header">
+                    <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html" aria-current="page">
+                                Home
+                                <span class="visually-hidden">(current)</span>
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link active" href="about.html">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="gallery.html">Gallery</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="blogs.html">Blogs</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contacts.html">Contacts</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link link-login" href="#" data-bs-toggle="modal"
+                                data-bs-target="#modalId">Login</a>
+                            <a class="nav-link link-logout" href="#" onclick="logout();"
+                                style="display:none;">Logout</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex my-2 my-lg-0 border rounded-pill" id="form-search" method="GET"
+                        action="search.html">
+                        <input class="form-control ms-2 border-0" type="text" placeholder="Search" name="keyword"
+                            id="keyword" required>
+                        <button class="btn my-2 my-sm-0 border-0" type="submit">
+                            <i class="fa-solid fa-magnifying-glass"> </i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <section id="banner-small"></section>
+    <div id="content"></div>
+    <div id="main">
+        <section class="container py-5">
+            <div class="row">
+                <div class="col-md-8 col-sm-12" id="about-us">
+                    <!--Handlebars-->
+                </div>
+                <div class="col-md-4 col-sm-12" id="our-vision">
+                    <!--Handlebars-->
+                </div>
+            </div>
+        </section>
+        <!--testimonial-->
+        <section class="container-fluid py-5" id="testimonials">
+            <div class="container">
+                <h1 class="text-white">Testimonials</h1>
+                <div class="row py-3" id="testimonials-hb">
+
+
+                </div>
+            </div>
+        </section>
+        <!--our team-->
+        <section id="our-team" class="container">
+            <h1 class="mt-5">Our Team</h1>
+            <div class="row py-3" id="our-team-hb">
+
+            </div>
+        </section>
+    </div>
+    <!--footer-->
+    <footer class="text-center container-fluid text-white py-4">
+        <ul class="nav justify-content-center " id="menu-footer">
+            <li class="nav-item">
+                <a class="nav-link " href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="gallery.html">Gallery</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="blogs.html">Blogs</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="contacts.html">Contacts</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link link-login" href="#" data-bs-toggle="modal" data-bs-target="#modalId">Login</a>
+                <a class="nav-link link-logout" href="#" onclick="logout();" style="display:none;">Logout</a>
+            </li>
+        </ul>
+        <p class="text-white-50 mt-4">Copyright &copy; 2022 by Nguyen Huu Vinh - 21880159</p>
+    </footer>
+    <!--Login Form-->
+
+    <!-- Modal -->
+    <div class="modal fade" id="modalId" tabindex="-1" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="btn-close float-end" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                    <form action="#" method="post" id="form-login" class="py-1" onsubmit="login(event);">
+                        <h3 class="text-center">Login Form</h3>
+                        <div class="mb-3">
+                            <input type="text" name="username" id="username" placeholder="Username"
+                                class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <input type="password" name="password" id="password" placeholder="Password"
+                                class="form-control">
+                        </div>
+                        <button class="form-control btn" type="submit">Login</button>
+                    </form>
+                </div>
+                <div class="modal-footer py-0">
+                    <div class="text-danger" id="error-login-message">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var modalId = document.getElementById('modalId');
+
+        modalId.addEventListener('show.bs.modal', function (event) {
+            // Button that triggered the modal
+            let button = event.relatedTarget;
+            // Extract info from data-bs-* attributes
+            let recipient = button.getAttribute('data-bs-whatever');
+            // Use above variables to manipulate the DOM
+        });
+    </script>
+
+
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+        </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+        integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+        </script>
+    <!--Web1 CSS-->
+    <link rel="stylesheet" href="css/21880159.css">
+    <!--Handlebars-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"
+        integrity="sha512-RNLkV3d+aLtfcpEyFG8jRbnWHxUqVZozacROI4J2F1sTaDqo1dPQYs01OMi1t1w9Y2FdbSCDSQ2ZVdAC8bzgAg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="js/21880159.js"></script>
+    <script id="about-us-template" type="text/x-handlebars-template">
+        {{#each data}}
+        <h1 class="py-3">{{name}}</h1>
+        <div>
+            <img src="{{thumbpath}}" alt="{{name}}" class="float-start rounded-4 me-3">
+            <p class="text-black-50">{{{summary}}}</p>
+            <a href="#aboutus/{{id}}" class="btn btn-link" onclick="loadDetails('aboutus/{{id}}', 'details-template','content')">Read more</a>
+        </div>
+        {{/each}}
+    </script>
+    <script id="our-vision-template" type="text/x-handlebars-template">
+        <h1 class="py-3">Our Vision</h1>
+        {{#each data}}
+        <div class="clearfix py-2">
+            <a class="text-decoration-none" href="#/visions/{{id}}" onclick="loadDetails('visions/{{id}}', 'details-template','content')">
+                <img src="{{thumbpath}}" alt="{{name}}" class="rounded-4 float-start me-3">
+                <h3 class="text-black">{{name}}</h3>
+                <p class="text-black-50">
+                    {{{summary}}}
+                </p>
+            </a>
+        </div>
+        {{/each}}
+    </script>
+    <script id="details-template" type="text/x-handlebars-template">
+        <div class="container py-5 overflow-auto">
+            {{#each data}}
+            <h1 class="py-3">{{name}}</h1>
+            <img src="{{imagepath}}" alt="{{name}}" class="float-start rounded-4 me-3">
+            <p>{{{description}}}</p>
+            {{/each}}
+        </div>
+    </script>
+    <script id="our-team-template" type="text/x-handlebars-template">
+        {{#each data}}
+        <div class="col">
+            <a href="#team/{{id}}">
+                <img src="{{thumbpath}}" alt="{{name}}" class="rounded-4 mb-3 img-fluid"
+            onclick="loadDetails('team/{{id}}','details-template','content')">
+            </a>
+            
+            <h4>{{name}}</h4>
+            <p class="text-black-50">
+                {{summary}}
+            </p>
+        </div>
+        {{/each}}
+    </script>
+    <script id="testimonials-template" type="text/x-handlebars-template">
+        {{#each data}}
+        <div class="col">
+            <p class="text-black-50">{{summary}}</p>
+                        <span class="text-white">{{name}}</span><br>
+                        <a href="#">{{email}}</a>
+        </div>
+        {{/each}}
+    </script>
+    <script>
+        checkLogin();
+        if (location.hash == '' || location.hash == "#") {
+            loadPage();
+        } else {
+            loadDetails(location.hash.substr(1), 'details-template', 'content');
+        }
+
+        function loadPage() {
+            document.getElementById('main').style.display = 'block';
+            document.getElementById('content').style.display = 'none';
+            loadData('aboutus', 'about-us-template', 'about-us');
+            loadData('visions', 'our-vision-template', 'our-vision');
+            loadData('team', 'our-team-template', 'our-team-hb');
+            loadData('testimonials', 'testimonials-template', 'testimonials-hb');
+            history.replaceState({ loadPage: 1 }, null, location.href);
+        }
+
+        async function loadDetails(request, templateId, viewId) {
+            document.getElementById('main').style.display = 'none';
+            document.getElementById('content').style.display = 'block';
+            await loadData(request, templateId, viewId);
+            history.replaceState({ request, templateId, viewId }, null, location.href);
+        }
+        window.onpopstate = (event) => {
+            let state = event.state;
+            if (state && state.loadPage) {
+                loadPage();
+
+            } else if (state && state.request) {
+                loadDetails(state.request, state.templateId, state.viewId);
+            }
+        }
+    </script>
+</body>
+
+</html>
